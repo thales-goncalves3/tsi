@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+        <div v-if="show">
+            <img v-bind:src="gato1" alt="">
+            <img v-bind:src="gato2" alt="">
+            <img v-bind:src="gato3" alt="">
+            <img v-bind:src="gato4" alt="">
+            <img v-bind:src="gato5" alt="">
+        </div>
+        <div v-else>
+            <p>erro ao carregar imagens</p>
+        </div>
+        <button v-on:click="loadImages">carregar imagens</button>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: "Frameworks Desenvolvimento Front-end",
+                gato1: "./img/gato1.jpg",
+                gato2: "./img/gato2.jpg",
+                gato3: "./img/gato3.jpg",
+                gato4: "./img/gato4.jpg",
+                gato5: "./img/gato5.jpg",
+                show: false,
+            },
+            methods:{
+                loadImages: function(){
+                    this.show = !this.show;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
