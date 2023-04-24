@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruteira</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container">
+            <h1>Lista de Compras</h1>
+            <div class="inputs">
+                <div class="adicionar">
+                    <h3>Adicionar Item:</h3>
+                    <div>
+                        <input type="text" id="adicionar" v-model="adicionar">
+                    <button v-on:click="adicionarItem">Adicionar a lista</button>
+                    </div>
+                </div>
+                <div class="pesquisar">
+                    <h3>Buscar Item:</h3>
+                    <input type="text" id="pesquisa" v-model="pesquisa">
+                </div>
+            </div>
+            <div class="lista">
+                <ul>
+                    <li v-for="item in filtrarItem">
+                        {{ item }}
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+
+        var app = new Vue({
+            el: "#app",
+            data: {
+                adicionar: '',
+                pesquisa: '',
+                itens: [
+                    
+                ]
+
+            },
+            computed: {
+                filtrarItem() {
+                    return this.itens.filter(user => {
+                        return user.toLowerCase().includes(this.pesquisa.toLowerCase());
+                    });
+                }
+            },
+            methods: {
+                adicionarItem() {
+                    this.itens.push(this.adicionar);
+                    this.adicionar = "";
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

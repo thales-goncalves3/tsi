@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <input type="text" id="resultado" value="0" disabled>
+	<table>
+		<tr>
+			<td onclick="adicionarValor('7')">7</td>
+			<td onclick="adicionarValor('8')">8</td>
+			<td onclick="adicionarValor('9')">9</td>
+			<td onclick="operacao('+')">+</td>
+		</tr>
+		<tr>
+			<td onclick="adicionarValor('4')">4</td>
+			<td onclick="adicionarValor('5')">5</td>
+			<td onclick="adicionarValor('6')">6</td>
+			<td onclick="operacao('-')">-</td>
+		</tr>
+		<tr>
+			<td onclick="adicionarValor('1')">1</td>
+			<td onclick="adicionarValor('2')">2</td>
+			<td onclick="adicionarValor('3')">3</td>
+			<td onclick="operacao('*')">*</td>
+		</tr>
+		<tr>
+			<td onclick="adicionarValor('0')">0</td>
+			<td onclick="adicionarValor('.')">.</td>
+			<td onclick="limpar()">C</td>
+			<td onclick="operacao('/')">/</td>
+		</tr>
+		<tr>
+			<td colspan="4" onclick="calcular()">=</td>
+		</tr>
+	</table>
+    </div>
+    <script>
+        
+    </script>
+</body>
+</html>
